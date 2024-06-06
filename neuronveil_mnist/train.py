@@ -238,7 +238,3 @@ def train_mnist_model() -> Model:
     # model = define_model(results['best_so_far_x'])
     # print(f'{test(model) * 100}%')
     # return model
-
-
-if __name__ == '__main__':
-    train()
