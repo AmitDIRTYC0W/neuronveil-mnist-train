@@ -9,8 +9,8 @@ class Softmax(Layer):
 	def __init__(self, log: bool = False):
 		self.log = log
 		
-	def infer(self, input_: ArrayLike) -> ArrayLike:
-		input_ = jnp.float32(input_) / (1 << com.FRACTION_BITS)
+	def infer(self, input_: ArrayLike, fraction_bits: int) -> ArrayLike:
+		input_ = jnp.float32(input_) / (1 << fraction_bits)
 
 		if self.log:
 			return jax.nn.log_softmax(input_)

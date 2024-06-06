@@ -25,10 +25,11 @@ classifiers = [
 ]
 dependencies = [
   "jax[cpu] ~= 0.4.0",
-  "pyswarms ~= 1.3.0",
+  "pypop7 ~= 0.0.79",
   "scikit-learn ~= 1.4.0",
   "numpy ~= 1.26.0",
-  "orjson ~= 3.10.3"
+  "orjson ~= 3.10.3",
+  "optuna ~= 3.6.1",
 ]
 dynamic = ["version"]
 

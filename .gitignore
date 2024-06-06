@@ -1,0 +1,6 @@
+artifacts/*
+**/.stignore
+dist
+**/*.pyc
+**/*.sqlite
+**/*.log

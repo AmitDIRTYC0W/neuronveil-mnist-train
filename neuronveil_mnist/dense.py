@@ -10,8 +10,9 @@ class Dense(SerializableLayer):
 		self.weights = weights
 		self.biases = biases
 
-	def infer(self, input_: ArrayLike) -> ArrayLike:
-		return jnp.matmul(self.weights, input_) // (1 << com.FRACTION_BITS) + self.biases
+	def infer(self, input_: ArrayLike, fraction_bits: int) -> ArrayLike:
+		return jnp.matmul(input_, self.weights) // (1 << fraction_bits) + self.biases
+		# return jnp.matmul(input_, self.weights) + self.biases
 
 	def serialize(self) -> dict:
 		return {

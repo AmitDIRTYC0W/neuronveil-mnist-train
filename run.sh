@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 docker build -t neuronveil_mnist .
 

@@ -17,5 +17,4 @@ def _save_model_to_file(model: Model, filepath: str) -> None:
 
 def main():
     model = train_mnist_model()
-    _save_model_to_file(model, '/artifacts/mnist.json')
-
+    _save_model_to_file(model, './artifacts/mnist.json')
