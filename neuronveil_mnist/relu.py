@@ -1,3 +1,5 @@
+import typing
+
 import jax.numpy as jnp
 from jax.typing import ArrayLike
 
@@ -12,3 +14,6 @@ class ReLU(SerializableLayer):
 		return {
 			'type': 'ReLULayer'
 		}
+	
+	def deserialize(dict) -> typing.Self:
+		return ReLU()

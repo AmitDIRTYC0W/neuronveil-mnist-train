@@ -40,6 +40,7 @@ Source = "https://github.com/AmitDIRTYC0W/NeuronVeil/scripts/NeuronVeil-mnist"
 
 [project.scripts]
 neuronveil-mnist = "neuronveil_mnist.neuronveil_mnist:main"
+neuronveil-mnist-eval = "neuronveil_mnist.evaluate:main"
 
 [tool.hatch.version]
 path = "neuronveil_mnist/__about__.py"

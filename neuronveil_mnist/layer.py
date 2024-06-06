@@ -11,3 +11,7 @@ class SerializableLayer(Layer):
 	@abstractmethod
 	def serialize(self) -> dict:
 		pass
+
+	@abstractmethod
+	def deserialize(dict):
+		pass

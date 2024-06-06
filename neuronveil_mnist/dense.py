@@ -1,9 +1,11 @@
+import typing
+
 from jax.typing import ArrayLike
 import jax.numpy as jnp
 
 from . import com
 from .layer import SerializableLayer
-from .utils import serialize_array
+from .utils import serialize_array, deserialize_array
 
 class Dense(SerializableLayer):
 	def __init__(self, weights: ArrayLike, biases: ArrayLike):
@@ -20,3 +22,6 @@ class Dense(SerializableLayer):
 			'biases': serialize_array(self.biases),
 			'weights': serialize_array(self.weights)
 		}
+
+	def deserialize(dict) -> typing.Self:
+		return Dense(deserialize_array(dict['weights']), deserialize_array(dict['biases']))

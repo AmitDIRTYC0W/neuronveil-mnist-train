@@ -72,6 +72,9 @@ def evaluate(parameters: ArrayLike, input_: ArrayLike, class_: int, fraction_bit
 def objective(parameters: ArrayLike, fraction_bits: int) -> float:
     batch_evaluate = jax.vmap(evaluate, in_axes=(None, 0, 0, None))
     images, image_classes = obtain_batch()
+    print(images[0], image_classes[0])
+    print(images.shape)
+    exit()
     return jnp.mean(batch_evaluate(parameters, images, image_classes, fraction_bits))
 
 
